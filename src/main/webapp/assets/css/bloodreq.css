@@ -1,0 +1,69 @@
+@charset "ISO-8859-1";
+   /* Style the form container */
+        form {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #f5f5f5;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Style the labels */
+        label {
+          font-weight: bold;
+          display: block;
+          margin-bottom: 5px;
+          color: #333;
+        }
+        
+        /* Style the select element */
+        select,
+        textarea,
+        input[type="text"] {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #fff;
+          font-size: 16px;
+        }
+        h1{
+            text-align: center;
+        }
+        /* Style the submit button */
+        input[type="submit"] {
+          background-color: #3498db;
+          color: #fff;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 18px;
+          transition: background-color 0.3s;
+        }
+        
+        /* Add hover effect to the submit button */
+        input[type="submit"]:hover {
+          background-color: #2980b9;
+        }
+        
+        /* Style the select dropdown arrow */
+        select {
+          appearance: none;
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" fill="%23333"><polygon points="0,0 12,0 6,6"/></svg>');
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+        }
+        
+        /* Style the textarea */
+        textarea {
+          resize: vertical;
+        }
+        
+        /* Adjust the font and padding for the Quantity dropdown */
+        #Quantity {
+          padding: 10px;
+          font-size: 16px;
+        }
