@@ -62,16 +62,15 @@ body {
     height: 100px;
   }
  /* container 1 */
- .container1{
-  display: flex;
-  box-sizing: border-box;
+ .container1,.container_tips,.tips{
+  
   margin-left: 300px;
 }
 
 .container1_left img{
-  width: 300px;
+  width: 400px;
 }
-.container1_right{
+.container1_right,s{
   padding: 50px;
 
 }
@@ -107,4 +106,117 @@ body {
 .container1_right .request_blood a:nth-of-type(2){
   border: 1px solid #ef3026;
   color:#ff6a39;
+}
+
+.container1{
+    display: flex;
+    box-sizing: border-box;
+}
+
+
+.container1_right{
+    padding: 50px;
+
+}
+.container1_right h1{
+    font-size: 40px;
+    color: #2b3539;
+    margin-bottom: 20px;
+}
+.container1_right h1 span{
+    color: #ff6a39;
+}
+.container1_right p{
+    text-indent: 50px;
+    font-size: 17px;
+}
+.container1_right .donate_get_blood{
+    margin: 40px auto;
+    width: fit-content;
+    height: 30px;
+    padding: 20px;
+}
+.container1_right .donate_get_blood a {
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin: 10px;
+}
+.container1_right .donate_get_blood a:nth-of-type(1){
+    background-color: #ff6a39;
+    color: white;
+    font-weight: 500;
+}
+.container1_right .donate_get_blood a:nth-of-type(2){
+    border: 1px solid #ff6a39;
+    color:#ff6a39;
+}
+/*2*/
+
+.container_tips{
+	
+    margin: 50px auto;
+    
+  }
+  .tips_head {
+    text-align: center;
+  }
+  
+  .tip{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 300px;
+    height: 300px;
+    margin: 50px 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  .tip h3{
+    text-align: center;
+  }
+  .tip .hr{
+    margin: 10px 0px 20px 0px;
+  }
+  .tip ul{
+    margin: 20px;
+  }
+  .tip ul li{
+    list-style:square;
+    font-size: 14px;
+    margin: 5px 0px;
+    color: #3a3a3a;
+  }
+  .tips{
+    display: flex;
+    justify-content: center;
+  }
+  .num{
+    position: absolute;
+    color: #ff6a39;
+  }
+  /*3*/
+  .container2{
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+.container2_left img{
+    width: 750px;
+}
+.container2_right h2{
+    font-size: 40px;
+    color: #2b3539;
+    margin-bottom: 20px;
+}
+.container2_right p{
+    text-indent: 50px;
+    font-size: 17px;
+}
+.container2_right h2 span{
+    color: #ff6a39;
+}
+.container2_right{
+    width: 650px;
+    margin-left: 29px;
+    margin-top: 100px;
 }

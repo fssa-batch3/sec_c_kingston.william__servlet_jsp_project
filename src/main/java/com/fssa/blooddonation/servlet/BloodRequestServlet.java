@@ -32,7 +32,7 @@ public class BloodRequestServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		// Created an instance of BloodReqService, which handles blood request
 		RequestService service = new RequestService(new BloodReqValidator(), new BloodRequestDao());
 
 		PrintWriter out = response.getWriter();
@@ -56,30 +56,32 @@ public class BloodRequestServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 
+		PrintWriter Out = response.getWriter();
+		BloodRequest req = new BloodRequest();
+		req.setName(request.getParameter("name"));
+		req.setBloodtype(BloodGroup.valueToEnumMapping(request.getParameter("bloodtype")));
+		req.setContactNo(request.getParameter("contactno"));
+		req.setDescription(request.getParameter("description"));
+		req.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+		req.setReqDate(LocalDate.now());
+		req.setVerification(false);
+		req.setStatus(RequestStatus.CLOSED);
 
-			BloodRequest req= new BloodRequest();
-			req.setName(request.getParameter("name"));
-			req.setBloodtype(BloodGroup.valueToEnumMapping(request.getParameter("bloodtype")) );
-			req.setContactNo(request.getParameter("contactno"));
-			req.setDescription(request.getParameter("description"));
-			req.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-			req.setReqDate(LocalDate.now());
-			req.setVerification(false);
-			req.setStatus(RequestStatus.CLOSED);
+		RequestService requestService = new RequestService(new BloodReqValidator(), new BloodRequestDao());
+
+		try {
+			requestService.createBloodReq(req);
+			System.out.println("Created Successfully");
+			Out.print("Request Successfully Submitted");
 			
-			RequestService requestService=new RequestService(new BloodReqValidator() ,new BloodRequestDao() );
-			
-			try {
-				requestService.createBloodReq(req);
-				System.out.println("Created Successfully");
-			} catch (ValidationException e) {
-				System.out.println("Not Created");
-				e.printStackTrace();
-			}	
+		} catch (ValidationException e) {
+			System.out.println("Not Created");
+			e.printStackTrace();
+		}
 	}
 
 }

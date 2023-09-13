@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+.container{
+	
+	margin-left:250px;
+	
+	
+}
+.container table{
+	width:90%;
+	
+}
+.container table th{
+	height:60px;
+	
+}
+.container table td{
+	height:50px;
+
+	text-align:center;
+	border:1px solid black;
+	border-width:0px 0px 1px 0px;
+}
