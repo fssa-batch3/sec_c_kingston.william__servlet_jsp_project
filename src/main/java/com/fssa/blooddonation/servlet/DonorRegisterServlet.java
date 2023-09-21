@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fssa.blooddonation.Dao.DonorRegisterDao;
 import com.fssa.blooddonation.enums.DonorBloodGroup;
 import com.fssa.blooddonation.enums.DonorDistrict;
-import com.fssa.blooddonation.enums.DonorGender;
+import com.fssa.blooddonation.enums.Gender;
 import com.fssa.blooddonation.enums.DonorState;
 import com.fssa.blooddonation.exception.ValidationException;
 import com.fssa.blooddonation.model.DonorRegister;
@@ -50,7 +50,7 @@ public class DonorRegisterServlet extends HttpServlet {
 	    donor.setDistrict(DonorDistrict.valueToEnumMapping(req.getParameter("district")));
 	    donor.setAge(Integer.parseInt(req.getParameter("age")));
 	    donor.setEmailId(req.getParameter("email"));
-	    donor.setGender(DonorGender.valueToEnumMapping(req.getParameter("gender")));
+	    donor.setGender(Gender.valueToEnumMapping(req.getParameter("gender")));
 
 	    // Create an instance of DonorRequestService, which handles donor registration
 	    DonorRequestService donorRequestService = new DonorRequestService(new DonorValidator(), new DonorRegisterDao());

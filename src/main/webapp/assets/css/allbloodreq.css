@@ -1,12 +1,12 @@
 @charset "ISO-8859-1";
 .container{
+	margin-top:50px;
 	
-	margin-left:250px;
 	
 	
 }
 .container table{
-	width:90%;
+	width:100%;
 	
 }
 .container table th{
