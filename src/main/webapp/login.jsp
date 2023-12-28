@@ -18,12 +18,12 @@
             <input type="radio" name="slide" id="login" checked>
             <input type="radio" name="slide" id="signup">
             <label for="login" class="slide login">Donor</label>
-            <label for="signup" class="slide signup">Hospital</label>
+            <label for="signup" class="slide signup">Admin</label>
             <div class="slider-tab"></div>
           </div>
           <div class="form-inner">
             <!--  donor login============================ -->
-            <form action="./LoginServlet" method="get" class="donor_login login">
+            <form action="./LoginServlet" method="post" class="donor_login login">
               <div class="field">
                 <input type="email" placeholder="Email Address" class="email" name="email" required id="email">
               </div>
@@ -35,7 +35,7 @@
 </div>
               <div class="field btn">
                 <div class="btn-layer"></div>
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" id="submitbtn">
               </div>
               <div class="signup-link">
 Not a Donor? <a href="./signup.jsp">Signup now</a>
@@ -68,7 +68,8 @@ Not a Donor? <a href="./signup.jsp">Signup now</a>
   <script src="./assets/js/signup.js"></script>
 	<script src="./assets/js/notify.js"></script>
 	<script>
-	<%String errorMsg = (String) request.getAttribute("errorMsg");
+<%
+String errorMsg = (String) request.getAttribute("errorMsg");
 String successMsg = (String) request.getAttribute("successMsg");
 if (errorMsg != null) {%>
 		console.log("<%=errorMsg%>");

@@ -27,14 +27,14 @@
 		<textarea id="description" name="description" rows="4" cols="50"
 			required></textarea>
 		<br> <br> <label for="ContactNo">Contact No:</label> <input
-			type="text" id="ContactNo" name="contactno" required
+			type="text" id="ContactNo" name="contactno" placeholder="Enter your mobile number"required
 			pattern="[0-9]{10}"
 			title="Please enter a valid 10-digit phone number"><br>
 			
 		<br> <label for="Name">Name:</label> <input type="text" id="Name"
-			name="name" required><br> <br> 
+			pattern="[A-Za-z]{2,32}" placeholder="Enter your name" name="name" required><br> <br> 
 			<label for="Quantity">Quantity:</label> <input type= "text" id="Quantity"
-			name="quantity"pattern="\d{1,50}" max="50" required>
+			name="quantity"pattern="\d{1,50}" max="50" placeholder="Enter the blood quantity 1-50" required>
 			
 		<br> <br> <input type="submit" value="Submit">
 	</form>

@@ -28,13 +28,13 @@
 			<option value="O-">O-</option>
 		</select><br>
 		<br> <label for="phone">Phone Number:</label> <input type="tel"
-			id="phone" name="phone" required><br>
+			id="phone" name="phone"pattern="[0-9]{10}" required><br>
 		<br> <label for="gender">Gender:</label> <input type="radio"
 			id="male" name="gender" value="Male" required> <label
 			for="male">Male</label> <input type="radio" id="female" name="gender"
 			value="Female" required> <label for="female">Female</label><br>
 		<br> <label for="password">Password:</label> <input
-			type="password" id="password" name="password" required><br>
+			type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password" name="password" required><br>
 		<br> <button type="submit" >Sign Up</button>
 	</form>
 </body>

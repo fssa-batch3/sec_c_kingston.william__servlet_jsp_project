@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DONOR</title>
 <link rel="stylesheet" href="./assets/css/index.css" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
 <link rel="stylesheet" href="./assets/css/common.css">
@@ -29,7 +30,30 @@
 					components are transfused each year. The average red blood cell
 					transfusion is approximately 3 pints.</p>
 				<div class="donate_get_blood">
-					<a href="./donateblood.jsp">Donor Register</a> <a href="./bloodrequest.jsp">Request Blood</a>
+					<%
+					String sessionuser = (String) request.getSession(false).getAttribute("currentuser");
+
+							if (sessionuser == null) {
+					%>
+
+
+				<a href="./login.jsp">Donor Register</a>
+
+				<a href="./login.jsp">Request Blood</a>
+				
+				<%
+				} else {
+				%>
+
+				<a href="./donateblood.jsp">Donor Register</a>
+
+				<a href="./bloodrequest.jsp">Request Blood</a>
+				
+
+
+				<%
+				}
+				%>
 				</div>
 			</div>
 		</div>
@@ -223,7 +247,7 @@
 	<footer>
 		<img src="./assets/img/logo.png" alt="logo" alt="logo">
 		<p>
-			Donate atleast once in the year. <BR> Most blood donors are
+			Donate atleast once in the year. <br> Most blood donors are
 			volunteers.But you may also donate blood several weeks before having
 			surgery. so that your blood is available in case you need a
 			transfusion. Donating blood for yourself is called an autologous

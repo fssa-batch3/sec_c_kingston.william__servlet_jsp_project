@@ -5,9 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registration Form</title>
-<link rel="stylesheet" href="./assets/css/donorregister.css" />
+<link rel="stylesheet" href="./assets/css/donateblood.css" />
 </head>
 <body>
+
 	<div class="container">
 
 		<header>Donor Registration</header>

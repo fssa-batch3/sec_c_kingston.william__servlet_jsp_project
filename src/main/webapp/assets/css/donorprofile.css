@@ -149,6 +149,27 @@
   .orange{
     color: #ff6a39;
   }
+  
+  /* Define the styles for the Logoutbtn button */
+.Logoutbtn {
+  background-color: #FFA500; /* Set the background color to orange */
+  color: #FFFFFF; /* Set the text color to white */
+  border: none; /* Remove the button border */
+  padding: 10px 20px; /* Add padding for better appearance */
+  border-radius: 5px; /* Add rounded corners */
+  font-size: 16px; /* Set the font size */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition on hover */
+
+  /* Add shadow for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the Logoutbtn button on hover */
+.Logoutbtn:hover {
+  background-color: #FF8C00; /* Darker orange on hover */
+}
+  
 
 
 

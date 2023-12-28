@@ -48,8 +48,8 @@
 			<td><%=bloodReq.getBloodtype()%></td>
 			<td><%=bloodReq.getDescription()%></td>
 			<td><%=bloodReq.getContactNo()%></td>
-			<td><button><%=bloodReq.getVerification()%></button></td>
-			<td><button> <%=bloodReq.getStatus()%></button></td>
+			<td><%=bloodReq.getVerification()%></td>
+			<td><%=bloodReq.getStatus()%></td>
 			<td><%=bloodReq.getCloseDate()!=null?bloodReq.getCloseDate():"- - -"%></td>
 
 		</tr>
