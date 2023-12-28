@@ -24,40 +24,46 @@ import com.fssa.blooddonation.validator.UserValidator;
  */
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		UserService userService = new UserService(new UserValidator(), new UserDao());
-		User userDetails = new User();
-		userDetails.setName(request.getParameter("name"));
-		userDetails.setEmail(request.getParameter("email"));
-		userDetails.setBloodGroup(BloodGroup.valueToEnumMapping(request.getParameter("blood_group")));
-		userDetails.setPhoneNo(request.getParameter("phone"));
-		userDetails.setGender(Gender.valueToEnumMapping(request.getParameter("gender")));
-		userDetails.setPassWord(request.getParameter("password"));
-		System.out.println(userDetails);
+    /**
+     * Handles the POST request for user sign-up.
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        // Create a UserService instance to handle user-related operations
+        UserService userService = new UserService(new UserValidator(), new UserDao());
+        
+        // Create a User instance to hold user details from the request
+        User userDetails = new User();
+        
+        // Set user details from request parameters
+        userDetails.setName(request.getParameter("name"));
+        userDetails.setEmail(request.getParameter("email"));
+        userDetails.setBloodGroup(BloodGroup.valueToEnumMapping(request.getParameter("blood_group")));
+        userDetails.setPhoneNo(request.getParameter("phone"));
+        userDetails.setGender(Gender.valueToEnumMapping(request.getParameter("gender")));
+        userDetails.setPassWord(request.getParameter("password"));
+        
+        System.out.println(userDetails); // For debugging
+        
+        // Get parameter names (not used in the code)
+        request.getParameterNames();
 
-		request.getParameterNames();
-
-		try {
-			userService.addUser(userDetails);
-			HttpSession session = request.getSession();
-			session.setAttribute("User", userDetails);
-			RequestDispatcher rd = request.getRequestDispatcher("./login.jsp");
-			rd.forward(request, response);
-		} catch (SQLException | ValidationException e) {
-
-			RequestDispatcher rd = request.getRequestDispatcher("./signup.jsp");
-			System.out.println(e.getMessage());
-			rd.forward(request, response);
-			e.printStackTrace();
-		}
-
-	}
-
+        try {
+            // Attempt to add the user to the database
+            userService.addUser(userDetails);
+            
+            // If successful, forward the user to the login page
+            RequestDispatcher rd = request.getRequestDispatcher("./login.jsp");
+            rd.forward(request, response);
+        } catch (SQLException | ValidationException e) {
+            // Handle exceptions by forwarding the user back to the signup page with an error message
+            RequestDispatcher rd = request.getRequestDispatcher("./signup.jsp");
+            System.out.println(e.getMessage()); // Print the error message (for debugging)
+            rd.forward(request, response);
+            e.printStackTrace(); // Print the stack trace (for debugging)
+        }
+    }
 }

@@ -3,6 +3,7 @@ package com.fssa.blooddonation.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -65,6 +66,9 @@ public class DonorRegisterServlet extends HttpServlet {
 	        System.out.println(e.getMessage());
 	        e.printStackTrace();
 	    }
+	 // Forward the request to the "requestblood.jsp" page to display the blood request details
+        RequestDispatcher rd = req.getRequestDispatcher("./index.jsp");
+        rd.forward(req, response);
 	}
 
 }
